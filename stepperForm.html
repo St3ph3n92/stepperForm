@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepper Form</title>
+    <link rel="stylesheet" href="stepperForm.css">
+</head>
+
+<body>
+
+    <div id="main">
+        <div class="box">
+           <div class="tab active" id="tab1">
+               <div class="tab-content">
+                   
+                   <h4>Step 1</h4>
+                   <h5>What is your name?</h5>
+                        <input type="text" placeholder=" Name" required>
+                        <button class="continue" onclick="nextTab(tab1, tab2, dot1, dot2)">
+                            <h4>Continue</h4>
+                        </button>
+                   
+               </div>
+               <span class="stepComplete">&#10003;</span>
+           </div>
+           <div class="tab inactive" id="tab2">
+                <div class="tab-content">
+                    <h4>Step 2</h4>
+                    <h5>Enter your password</h5>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <div class="buttonGroup">
+                        <button class="previous" onclick="previousTab(tab2, tab1, dot2, dot1)">
+                            <h4>Previous</h4>
+                        </button>
+                        <button class="continue" onclick="nextTab(tab2, tab3, dot2, dot3)">
+                            <h4>Continue</h4>
+                        </button>
+                    </div>
+                </div>
+                <span class="stepComplete">&#10003;</span>
+           </div>
+           <div class="tab inactive" id="tab3">
+                <div class="tab-content">
+                    <h4>Step 3</h4>
+                    <h5>Enter your date of birth</h5>
+                    <input type="date" name="dob">
+                    <div class="buttonGroup">
+                        <button class="previous" onclick="previousTab(tab3, tab2, dot3, dot2)">
+                            <h4>Previous</h4>
+                        </button>
+                        <button class="continue" onclick="nextTab(tab3, tab4, dot3, dot4)">
+                            <h4>Continue</h4>
+                        </button>
+                    </div>
+                </div>
+                <span class="stepComplete">&#10003;</span>
+           </div>
+           <div class="tab inactive" id="tab4">
+                <div class="tab-content">
+                    <h4>Step 4</h4>
+                    <h5>What gender are you?</h5>
+
+                    <div>
+                        <input type="radio" name="gender" required>
+                        <label for="male">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="gender" required>
+                        <label for="female">Female</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="gender" required>
+                        <label for="non-binary">Non-binary</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="gender" required>
+                        <label for="preferno">Prefer not to say</label>
+                    </div>
+                    <div class="buttonGroup">
+                        <button class="previous" onclick="previousTab(tab4, tab3, dot4, dot3)">
+                            <h4>Previous</h4>
+                        </button>
+                        <button class="continue"  onclick="finish()">
+                            <h4>Finish</h4>
+                        </button>
+                    </div>
+                </div>
+                <span class="stepComplete">&#10003;</span>
+           </div>
+    
+        </div>
+        <div id="progressBar">
+            <div class="dot active" id="dot1">1</div>
+            <div class="dot" id="dot2">2</div>
+            <div class="dot" id="dot3">3</div>
+            <div class="dot" id="dot4">4</div>   
+        </div>
+
+        <!-- <div id="welcomeBox">
+            <h1>Welcome</h1>
+            <figure>
+                <img src="https://i.quotev.com/img/q/u/15/3/22/0094702273-Shad.jpg" alt="" srcset="">
+                <figcaption>Name, Age</figcaption>
+            </figure>
+           
+
+        </div> -->
+
+    </div>
+
+    
+    <script src="stepperForm.js"></script>
+</body>
+</html>
